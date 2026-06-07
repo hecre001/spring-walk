@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spring Walk — Wild Moments</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="logo">
+        <span class="logo-leaf">🌿</span>
+        <span class="logo-name">Wild Moments</span>
+      </div>
+      <nav>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+        <a href="#credits">Credits</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="eyebrow">Interactive Nature Story · CMNS2016 A1</p>
+      <h1>Spring Walk</h1>
+      <p class="hero-sub">
+        A quiet afternoon in the park. Cherry blossoms line the path.
+        A magpie hops into the grass ahead of you.
+        <em>Where will this afternoon take you?</em>
+      </p>
+      <a href="#experience" class="btn-primary">Begin the Walk ↓</a>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="experience">
+    <p class="label">Interactive Experience</p>
+    <h2>Choose Your Path</h2>
+    <p class="section-sub">
+      Watch the opening sequence, then decide where the afternoon leads.
+      Each path reveals a different, real moment from the same day.
+    </p>
+
+    <div class="player-wrap">
+      <div class="player-box" id="player-box">
+
+        <!-- State tag -->
+        <div class="vid-tag" id="vid-tag">Opening</div>
+
+        <!-- Video element -->
+        <video id="vid"
+               src="videos/video1_intro.mp4"
+               playsinline
+               preload="auto">
+        </video>
+
+        <!-- Overlay: play -->
+        <div class="overlay" id="ov-play">
+          <button class="play-circle" id="btn-play" aria-label="Play video">
+            <svg viewBox="0 0 64 64">
+              <circle cx="32" cy="32" r="31" stroke="white" stroke-width="2" fill="none"/>
+              <polygon points="26,20 48,32 26,44" fill="white"/>
+            </svg>
+          </button>
+          <span class="play-hint">Tap to begin · Sound on</span>
+        </div>
+
+        <!-- Overlay: choice -->
+        <div class="overlay hidden" id="ov-choice">
+          <div class="choice-box">
+            <p class="choice-heading">The afternoon offers a choice.</p>
+            <p class="choice-sub">Where will you go?</p>
+            <button class="choice-btn btn-a" id="btn-a">
+              <span class="path-tag">PATH A</span>
+              <span class="path-detail">
+                <span class="path-name">Into the Wild</span>
+                <span class="path-desc">Follow the animal into the quiet of the park</span>
+              </span>
+              <span class="path-arrow">→</span>
+            </button>
+            <button class="choice-btn btn-b" id="btn-b">
+              <span class="path-tag path-tag-b">PATH B</span>
+              <span class="path-detail">
+                <span class="path-name">Shelter from the Storm</span>
+                <span class="path-desc">Dark clouds rolling in — find somewhere dry</span>
+              </span>
+              <span class="path-arrow">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Overlay: end -->
+        <div class="overlay hidden" id="ov-end">
+          <div class="end-box">
+            <p class="end-msg" id="end-msg"></p>
+            <button class="btn-end" id="btn-replay">↺ &nbsp;Watch Again</button>
+            <button class="btn-end btn-end-ghost" id="btn-other">Try the Other Path</button>
+          </div>
+        </div>
+
+      </div><!-- /player-box -->
+
+      <!-- Progress bar -->
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <!-- Branch dots -->
+      <div class="dots">
+        <div class="dot dot-active" id="dot-0" title="Opening"></div>
+        <div class="dot-line"></div>
+        <div class="dot" id="dot-a" title="Path A: Into the Wild"></div>
+        <div class="dot-gap"></div>
+        <div class="dot" id="dot-b" title="Path B: Shelter from the Storm"></div>
+      </div>
+    </div><!-- /player-wrap -->
+
+    <p class="audio-note">
+      🎵 Sound on recommended.&nbsp;&nbsp;
+      All footage shot by the author on a personal smartphone (2025–2026).
+    </p>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="label">About This Project</p>
+        <h2>A Branching Nature Documentary</h2>
+        <p>
+          <em>Spring Walk</em> is a short interactive nature documentary
+          shot entirely on a personal smartphone. Using a two-branch structure,
+          the viewer decides how the afternoon unfolds — a quiet encounter with
+          wildlife, or taking cover as the rain moves in.
+        </p>
+        <p>
+          All three videos are encoded at 1:1 square ratio (1080 × 1080, H.264)
+          so they embed natively on any social media platform or mobile screen.
+          The branching logic is built with plain HTML5 and Vanilla JavaScript —
+          no frameworks, no plugins.
+        </p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat"><span class="stat-n">3</span><span class="stat-l">Videos</span></div>
+        <div class="stat"><span class="stat-n">1:1</span><span class="stat-l">Square Format</span></div>
+        <div class="stat"><span class="stat-n">41s</span><span class="stat-l">Total Runtime</span></div>
+        <div class="stat"><span class="stat-n">H.264</span><span class="stat-l">Video Codec</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how">
+    <p class="label">How It Works</p>
+    <h2>A Branching Narrative</h2>
+    <div class="how-steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <h3>The Walk Begins</h3>
+        <p>Cherry blossoms and a curious magpie set the scene on a quiet spring afternoon.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <h3>Your Choice</h3>
+        <p>The path splits. You decide which moment the afternoon holds for you.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <h3>The Moment</h3>
+        <p>One path leads to wildlife. The other, to shelter and rain — each real, each brief.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credits -->
+  <section id="credits" class="credits">
+    <div class="credits-inner">
+      <p class="label">Credits &amp; Sources</p>
+      <h2>Project Notes</h2>
+
+      <div class="credits-grid">
+        <div class="credit-block">
+          <h3>Course</h3>
+          <p>CMNS2016 — Social and Interactive Media<br>Semester 1, 2025 · Assignment 1</p>
+        </div>
+        <div class="credit-block">
+          <h3>Video Footage</h3>
+          <p>All clips shot by the author on a personal smartphone (2025–2026):</p>
+          <ul>
+            <li>Cherry blossom path · VID_20260404 · Opening</li>
+            <li>Magpie on park grass · VID_20260412 · Opening</li>
+            <li>Deer / fawn encounter · VID_20250601 · Path A</li>
+            <li>Rain on cobblestones · VID_20250625 · Path B</li>
+            <li>Rainy highway interior · VID_20250625 · Path B</li>
+          </ul>
+        </div>
+        <div class="credit-block">
+          <h3>Audio</h3>
+          <p>
+            Background music: <em>Music.mp3</em> — provided as part of CMNS2016
+            course practice materials. Used for educational and assessment purposes only.
+          </p>
+        </div>
+        <div class="credit-block">
+          <h3>Technology</h3>
+          <p>HTML5 · CSS3 · Vanilla JavaScript<br>ffmpeg (video processing) · Python / Pillow (title cards)</p>
+        </div>
+        <div class="credit-block credit-block-wide">
+          <h3>Reflection</h3>
+          <p>
+            This project explores branching narrative as a form of interactive mobile media.
+            By constraining footage to the 1:1 square format and pairing it with JavaScript-driven
+            choice logic, I aimed to create an experience that feels native to social media while
+            carrying a simple but genuine narrative arc. The nature setting allowed for two outcomes
+            that contrast in mood — stillness versus shelter — without requiring elaborate production.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">🌿 Wild Moments</div>
+      <div class="footer-credits">
+        <p>
+          All video footage © the author (2025–2026). Shot on personal smartphone.<br>
+          Background music: Music.mp3 from CMNS2016 course materials · educational use only.<br>
+          Built with HTML5 · CSS3 · Vanilla JavaScript
+        </p>
+      </div>
+      <div class="footer-copy">CMNS2016 A1 · 2025</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

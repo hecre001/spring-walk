@@ -24,8 +24,8 @@
   };
 
   const END_MSG = {
-    pathA: 'You followed the deer into a quiet corner of the park.\nThe afternoon held its breath.',
-    pathB: 'Safe inside — the rain became its own kind of music.\nThe storm passed.',
+    pathA: 'You stayed with the wildlife trail.\nThe walk became slower and more watchful.',
+    pathB: 'You followed the rainy detour.\nThe path changed, but the walk continued.',
   };
 
   let phase = 'intro';
@@ -99,20 +99,20 @@
 
   // ── Path choices ──────────────────────────────────────────────────────────
   btnA.addEventListener('click', () =>
-    loadAndPlay(SRC.pathA, 'Path A — Into the Wild', 'pathA'));
+    loadAndPlay(SRC.pathA, 'Path A — Wildlife Trail', 'pathA'));
   btnB.addEventListener('click', () =>
-    loadAndPlay(SRC.pathB, 'Path B — Shelter from the Storm', 'pathB'));
+    loadAndPlay(SRC.pathB, 'Path B — Rainy Detour', 'pathB'));
 
   // ── End actions ───────────────────────────────────────────────────────────
   btnReplay.addEventListener('click', () => {
     const iA = phase === 'pathA';
     loadAndPlay(iA ? SRC.pathA : SRC.pathB,
-                iA ? 'Path A — Into the Wild' : 'Path B — Shelter from the Storm',
+                iA ? 'Path A — Wildlife Trail' : 'Path B — Rainy Detour',
                 phase);
   });
   btnOther.addEventListener('click', () => {
-    if (phase === 'pathA') loadAndPlay(SRC.pathB, 'Path B — Shelter from the Storm', 'pathB');
-    else                   loadAndPlay(SRC.pathA, 'Path A — Into the Wild',           'pathA');
+    if (phase === 'pathA') loadAndPlay(SRC.pathB, 'Path B — Rainy Detour', 'pathB');
+    else                   loadAndPlay(SRC.pathA, 'Path A — Wildlife Trail', 'pathA');
   });
 
   // ── Smooth scroll ─────────────────────────────────────────────────────────

@@ -99,9 +99,9 @@ nav a:hover { color: var(--white); }
 }
 
 /* Player */
-.player-wrap { max-width: 640px; margin: 0 auto; }
+.player-wrap { max-width: 430px; margin: 0 auto; }
 .player-box {
-  position: relative; width: 100%; aspect-ratio: 1/1;
+  position: relative; width: 100%; aspect-ratio: 9/16;
   background: #000; border-radius: var(--r); overflow: hidden;
   box-shadow: 0 0 0 1px var(--border), 0 24px 64px rgba(0,0,0,.65);
 }
